@@ -1,28 +1,45 @@
 import React from 'react';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { AiOutlineFacebook, AiOutlineInstagram, AiOutlineShopping} from 'react-icons/ai';
-import { BsPersonCircle } from 'react-icons/bs'
 import { MdOutlineKeyboardArrowDown } from 'react-icons/md'
+import { login, logout, onUserStateChange } from '../api/firebase';
 
 
 export default function Navbar() {
     const [ isHover, setHover ] = useState(false);
+    const [ user, setUser ] = useState();
+
+    useEffect(()=> {
+        console.log('useEffect')
+        onUserStateChange(setUser)}, [])
+
+
     const handleMouseEnter = () => setHover(true)
     const handleMouseLeave = () => isHover && setHover(false) ;
 
     return (
         <header onMouseLeave={handleMouseLeave} className='text-brand font-basic'> 
             <div className='flex relative'>
-                    <Link to='/' className="m-auto text-center py-3">
-                        <h1 className="text-5xl p-2 font-brand font-semibold opacity-80">Heepify</h1>
-                    </Link>
-                    <nav className="flex absolute text-3xl right-0 top-1/4 m-3 items-center opacity-80">
-                        <Link to='/' className="hover:text-point"><AiOutlineInstagram /></Link>
-                        <Link to='/' className="ml-3 hover:text-point"><AiOutlineFacebook /></Link>
-                        <Link to='/cart' className="mx-3 hover:text-point"><AiOutlineShopping /></Link>
-                        <Link to='/login' className="mx-2/3 text-2xl hover:text-point"><BsPersonCircle /></Link>
-                    </nav>
+                <Link to='/' className="m-auto text-center py-3">
+                    <h1 className="text-5xl p-2 font-brand font-semibold opacity-80">Heepify</h1>
+                </Link>   
+                <nav className="flex md:absolute text-3xl right-0 top-1/4 m-3 items-center opacity-80">
+                    <Link to='/' className="hover:text-point"><AiOutlineInstagram /></Link>
+                    <Link to='/' className="ml-4 hover:text-point"><AiOutlineFacebook /></Link>
+                    { user ? (
+                    <>
+                        <Link to='/cart' className="ml-4 hover:text-point"><AiOutlineShopping /></Link>   
+                        <div className='flex items-center'>
+                            <div className="hover:text-point w-7 h-7 ml-4"><img src={user.photoURL} alt='profile' className='rounded-full'></img></div>
+                            <div className="text-base ml-3">{user?.displayName}</div>
+                        </div>
+                        <div onClick={logout} className='hover:text-point text-base text-center ml-4 cursor-pointer'>LOGOUT</div>
+                    </>
+                    ) : (
+                    <div onClick={login} className='hover:text-point text-base text-center ml-4 cursor-pointer'>LOGIN</div>
+                    )}
+                </nav>                    
             </div>
             <nav className='text-center flex justify-center'>
                 <Link to='/' className='mx-5 hover:text-point'>HOME</Link>
