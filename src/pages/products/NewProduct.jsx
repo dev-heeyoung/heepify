@@ -72,23 +72,23 @@ export default function NewProduct() {
                                 <label htmlFor="free-checkbox" className='h-8 flex items-center pl-3 mr-2 opacity-70 peer-checked:opacity-100 cursor-pointer'>FREE</label>
                             </div>
                             <div className='flex'>
-                                <input type="checkbox" id="xs-checkbox" name="size" value="xs" onChange={handleChange} className='peer scale-110 flex self-center cursor-pointer text-brand bg-gray-100 border-gray-300 rounded focus:ring-point focus:ring-2'/>
+                                <input type="checkbox" id="xs-checkbox" name="size" value="XS" onChange={handleChange} className='peer scale-110 flex self-center cursor-pointer text-brand bg-gray-100 border-gray-300 rounded focus:ring-point focus:ring-2'/>
                                 <label htmlFor="xs-checkbox" className='h-8 flex items-center pl-3 mr-2 opacity-70 peer-checked:opacity-100 cursor-pointer'>XS</label>
                             </div>                            
                             <div className='flex'>
-                                <input type="checkbox" id="s-checkbox" name="size" value="s" onChange={handleChange} className='peer scale-110 flex self-center cursor-pointer text-brand bg-gray-100 border-gray-300 rounded focus:ring-point focus:ring-2'/>
+                                <input type="checkbox" id="s-checkbox" name="size" value="S" onChange={handleChange} className='peer scale-110 flex self-center cursor-pointer text-brand bg-gray-100 border-gray-300 rounded focus:ring-point focus:ring-2'/>
                                 <label htmlFor="s-checkbox" className='h-8 flex items-center pl-3 mr-2 opacity-70 peer-checked:opacity-100 cursor-pointer'>S</label>
                             </div>
                             <div className='flex'>
-                                <input type="checkbox" id="m-checkbox" name="size" value="m" onChange={handleChange} className='peer scale-110 flex self-center cursor-pointer text-brand bg-gray-100 border-gray-300 rounded focus:ring-point focus:ring-2'/>
+                                <input type="checkbox" id="m-checkbox" name="size" value="M" onChange={handleChange} className='peer scale-110 flex self-center cursor-pointer text-brand bg-gray-100 border-gray-300 rounded focus:ring-point focus:ring-2'/>
                                 <label htmlFor="m-checkbox" className='h-8 flex items-center pl-3 mr-2 opacity-70 peer-checked:opacity-100 cursor-pointer'>M</label>
                             </div>
                             <div className='flex'>
-                                <input type="checkbox" id="l-checkbox" name="size" value="l" onChange={handleChange} className='peer scale-110 flex self-center cursor-pointer text-brand bg-gray-100 border-gray-300 rounded focus:ring-point focus:ring-2'/>
+                                <input type="checkbox" id="l-checkbox" name="size" value="L" onChange={handleChange} className='peer scale-110 flex self-center cursor-pointer text-brand bg-gray-100 border-gray-300 rounded focus:ring-point focus:ring-2'/>
                                 <label htmlFor="l-checkbox" className='h-8 flex items-center pl-3 mr-2 opacity-70 peer-checked:opacity-100 cursor-pointer'>L</label>
                             </div>
                             <div className='flex'>
-                                <input type="checkbox" id="xl-checkbox" name="size" value="xl" onChange={handleChange} className='peer scale-110 flex self-center cursor-pointer text-brand bg-gray-100 border-gray-300 rounded focus:ring-point focus:ring-2'/>
+                                <input type="checkbox" id="xl-checkbox" name="size" value="XL" onChange={handleChange} className='peer scale-110 flex self-center cursor-pointer text-brand bg-gray-100 border-gray-300 rounded focus:ring-point focus:ring-2'/>
                                 <label htmlFor="xl-checkbox" className='h-8 flex items-center pl-3 mr-2 opacity-70 peer-checked:opacity-100 cursor-pointer'>XL</label>
                             </div>
                         </div>

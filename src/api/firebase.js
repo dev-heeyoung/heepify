@@ -47,14 +47,25 @@ async function checkAdminUser (user) {
   })
 }
 
-export async function addNewProduct (product, sizeOption, imageUrl) {
+export async function addNewProduct (product, sizeOption, imageURL) {
   const id = uuid()
-  console.log(product, sizeOption, imageUrl)
   set(ref(database, `products/${id}`), {
     ...product,
     id,
     price: parseInt(product.price),
     sizeOption,
-    imageUrl
+    imageURL
   })
+}
+
+export async function getProducts () {
+  return get(ref(database, `products`))
+    .then(snapshot => {
+      if (snapshot.exists()) {
+        return Object.values(snapshot.val())
+      } else {
+        return []
+      }
+    })
+    .catch(console.log)
 }
