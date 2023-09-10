@@ -39,12 +39,12 @@ export default function ProductDetail({ state }) {
                     </Link>
                     <div className='mt-10'>
                         <h3 className='font-semibold'>SHARE</h3>
-                        <div className='flex mt-3 ml-1 opacity-70'>
-                            <div className="hover:text-point cursor-pointer scale-150 mr-5"><FaSquareInstagram /></div>
-                            <div className="hover:text-point cursor-pointer scale-150 mr-5"><BsFacebook /></div>
-                            <div className="hover:text-point cursor-pointer scale-150 mr-5"><BsTwitter /></div>
-                            <div className="hover:text-point cursor-pointer scale-150 mr-5"><BsPinterest /></div>
-                        </div>
+                        <ul className='flex mt-3 ml-1 opacity-70'>
+                            <li className="hover:text-point cursor-pointer scale-150 mr-5"><FaSquareInstagram /></li>
+                            <li className="hover:text-point cursor-pointer scale-150 mr-5"><BsFacebook /></li>
+                            <li className="hover:text-point cursor-pointer scale-150 mr-5"><BsTwitter /></li>
+                            <li className="hover:text-point cursor-pointer scale-150 mr-5"><BsPinterest /></li>
+                        </ul>
                     </div>
                 </div>
                 
