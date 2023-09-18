@@ -7667,6 +7667,7 @@ __metadata:
     react-icons: ^4.10.1
     react-router-dom: ^6.15.0
     react-scripts: 5.0.1
+    swiper: ^10.2.0
     tailwindcss: ^3.3.3
     uuid: ^9.0.0
     web-vitals: ^2.1.0
@@ -13061,6 +13062,13 @@ __metadata:
   bin:
     svgo: bin/svgo
   checksum: b92f71a8541468ffd0b81b8cdb36b1e242eea320bf3c1a9b2c8809945853e9d8c80c19744267eb91cabf06ae9d5fff3592d677df85a31be4ed59ff78534fa420
+  languageName: node
+  linkType: hard
+
+"swiper@npm:^10.2.0":
+  version: 10.2.0
+  resolution: "swiper@npm:10.2.0"
+  checksum: b81fe81c72b92d0c7d0ba0eb1ea96a7e29de6b67d059fc9d01a0c5285dcadd66f25d258f32c05f87bf54663cf8b09d26b38be5029c064c4822768782772cc025
   languageName: node
   linkType: hard
 

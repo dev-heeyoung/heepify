@@ -8,6 +8,7 @@ export default function Products({ category }) {
     const products = data && data.filter((product) => product.category === category)
     return (
         <section className='max-w-screen-2xl m-auto pb-28 font-basic'>
+            <h1 className='text-left my-12'>products {`> ${category}`}</h1>
             { isLoading && <div>Loading...</div>}
             { error && <div>{error}</div>}
             <p className='text-right'> { products ? products.length : 0 } items</p>

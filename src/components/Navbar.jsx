@@ -15,7 +15,7 @@ export default function Navbar() {
     const handleMouseLeave = () => isHover && setHover(false);
 
     return (
-        <header onMouseLeave={handleMouseLeave} className='text-brand font-basic'> 
+        <header onMouseLeave={handleMouseLeave} className='text-brand font-basic px-10'> 
             <div className='flex relative'>
                 <Link to='/' className="m-auto text-center py-3">
                     <h1 className="text-5xl p-2 font-brand font-semibold opacity-80">Heepify</h1>

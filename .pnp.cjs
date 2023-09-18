@@ -46,6 +46,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["react-icons", "virtual:d90d9e3f2c4a25e98208de9137bf9589342825f39de8fb5804981af47545ea3dc07431292981775626ab971a8fad79bf317ba171a057042b8f0c9d0ca13b5762#npm:4.10.1"],\
             ["react-router-dom", "virtual:d90d9e3f2c4a25e98208de9137bf9589342825f39de8fb5804981af47545ea3dc07431292981775626ab971a8fad79bf317ba171a057042b8f0c9d0ca13b5762#npm:6.15.0"],\
             ["react-scripts", "virtual:d90d9e3f2c4a25e98208de9137bf9589342825f39de8fb5804981af47545ea3dc07431292981775626ab971a8fad79bf317ba171a057042b8f0c9d0ca13b5762#npm:5.0.1"],\
+            ["swiper", "npm:10.2.0"],\
             ["tailwindcss", "npm:3.3.3"],\
             ["uuid", "npm:9.0.0"],\
             ["web-vitals", "npm:2.1.4"]\
@@ -11159,6 +11160,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["react-icons", "virtual:d90d9e3f2c4a25e98208de9137bf9589342825f39de8fb5804981af47545ea3dc07431292981775626ab971a8fad79bf317ba171a057042b8f0c9d0ca13b5762#npm:4.10.1"],\
             ["react-router-dom", "virtual:d90d9e3f2c4a25e98208de9137bf9589342825f39de8fb5804981af47545ea3dc07431292981775626ab971a8fad79bf317ba171a057042b8f0c9d0ca13b5762#npm:6.15.0"],\
             ["react-scripts", "virtual:d90d9e3f2c4a25e98208de9137bf9589342825f39de8fb5804981af47545ea3dc07431292981775626ab971a8fad79bf317ba171a057042b8f0c9d0ca13b5762#npm:5.0.1"],\
+            ["swiper", "npm:10.2.0"],\
             ["tailwindcss", "npm:3.3.3"],\
             ["uuid", "npm:9.0.0"],\
             ["web-vitals", "npm:2.1.4"]\
@@ -18048,6 +18050,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["csso", "npm:4.2.0"],\
             ["picocolors", "npm:1.0.0"],\
             ["stable", "npm:0.1.8"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["swiper", [\
+        ["npm:10.2.0", {\
+          "packageLocation": "./.yarn/cache/swiper-npm-10.2.0-f03bf90787-b81fe81c72.zip/node_modules/swiper/",\
+          "packageDependencies": [\
+            ["swiper", "npm:10.2.0"]\
           ],\
           "linkType": "HARD"\
         }]\

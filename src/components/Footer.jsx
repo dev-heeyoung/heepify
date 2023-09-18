@@ -4,7 +4,7 @@ import { FaSquareInstagram } from 'react-icons/fa6';
 
 export default function Footer() {
     return (
-        <section className='font-basic py-10 mt-10 mx-auto border-t text-sm'>
+        <section className='font-basic py-10 px-10 mx-auto border-t text-sm'>
             <div className="flex justify-between mb-7">
                 <div className='w-1/4 mr-3'>
                     <h1 className='mb-5 text-base'>HEEPIFY</h1>
@@ -42,7 +42,7 @@ export default function Footer() {
                     <div className='mt-5'>
                         <h5>Enter your email</h5>
                         <div className='flex border-b m-auto place-items-center'>
-                            <input type='email' className='text-sm w-full mr-2 pr-3 mt-1 border-transparent focus:border-transparent focus:ring-0'/>
+                            <input type='email' className='text-sm w-full mr-2 pr-3 mt-1 bg-transparent border-transparent focus:border-transparent focus:ring-0'/>
                             <div className='scale-125 mr-3'><BsSend /></div>
                         </div>
                     </div>
