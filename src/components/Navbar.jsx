@@ -1,11 +1,10 @@
 import React from 'react';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { AiOutlineFacebook, AiOutlineInstagram, AiOutlineShopping, AiOutlineEdit} from 'react-icons/ai';
+import { AiOutlineFacebook, AiOutlineInstagram, AiOutlineEdit} from 'react-icons/ai';
 import { MdOutlineKeyboardArrowDown } from 'react-icons/md'
-import { useAuthContext } from './context/AuthContext';
-
-
+import { useAuthContext } from '../context/AuthContext';
+import CartStatus from './CartStatus';
 
 export default function Navbar() {
     const [ isHover, setHover ] = useState(false);
@@ -29,7 +28,7 @@ export default function Navbar() {
                         </Link>
                     )}
                     { user && !(user.isAdmin) && 
-                        <Link to='/cart' className="ml-4 hover:text-point"><AiOutlineShopping /></Link>  
+                        <CartStatus />
                     }
                     { user && (
                         <>

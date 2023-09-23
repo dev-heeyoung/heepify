@@ -1,16 +1,26 @@
-import React from 'react';
-import { useLocation, Link } from 'react-router-dom' 
+import React, { useState } from 'react';
+import { useLocation } from 'react-router-dom' 
 import { BsFacebook, BsTwitter, BsPinterest } from 'react-icons/bs';
 import { FaSquareInstagram } from 'react-icons/fa6';
-
-
 import Button from '../../components/Button';
-
+import useCart from '../../hooks/useCart';
 
 export default function ProductDetail({ state }) {
     const {
-        state: { product: {imageURL, title, description, category, price, sizeOption }}
+        state: { product: {id, imageURL, title, description, category, price, sizeOption }}
     } = useLocation();
+    const [ selectedOption, setSelectedOption ] = useState(sizeOption[0]); 
+    const { addOrUpdateItem } = useCart();
+
+    const handleSelect = (e) => setSelectedOption(e.target.value);
+    const handleClick = (e) => {
+        const product = { id, imageURL, title, category, price, selectedOption, sizeOption, quantity: 1 };
+        addOrUpdateItem.mutate(product, {
+            onSuccess: () => {
+                alert('Added to your cart');
+            }
+        })
+    }
 
     return (
         <section className='max-w-screen-xl mx-auto flex border font-basic relative mt-24'>
@@ -27,16 +37,14 @@ export default function ProductDetail({ state }) {
                             sizeOption.map((option, index) => {
                                 return (
                                 <label key={index}>
-                                    <input type='radio' name='size' value={option} defaultChecked={option === sizeOption[0]} className='sr-only peer'/>
+                                    <input type='radio' name='size' onChange={handleSelect} value={option} defaultChecked={option === sizeOption[0]} className='sr-only peer'/>
                                     <div className='w-16 h-8 border flex items-center justify-center px-2 mr-3 peer-checked:bg-brand peer-checked:text-white cursor-pointer'>{option}</div>
                                 </label>
                                 )
                             })}
                         </div>
                     </div>
-                    <Link to='/cart'>
-                        <Button text='ADD TO CART' className='mt-10'/>
-                    </Link>
+                    <Button text='ADD TO CART' className='mt-10' onClick={handleClick}/>
                     <div className='mt-10'>
                         <h3 className='font-semibold'>SHARE</h3>
                         <ul className='flex mt-3 ml-1 opacity-70'>

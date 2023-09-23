@@ -8,7 +8,8 @@ module.exports = {
         brand: '#1c1c1cff',
         point: '#c9ab78ff',
         basic: '#eceae7ff',
-        beige: '#e8e5e2ff'
+        beige: '#e8e5e2ff',
+        border: '#ccc'
       },
       fontFamily: {
         brand: ['Italiana', 'serif'],

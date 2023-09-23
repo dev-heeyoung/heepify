@@ -1,11 +1,11 @@
 import React from 'react';
-import { useQuery } from '@tanstack/react-query'
-import { getProducts } from '../api/firebase';
+import useProducts from '../hooks/useProducts';
 import ProductCard from './ProductCard';
 
 export default function Products({ category }) {
-    const { data, isLoading, error } = useQuery(['products'], getProducts);
+    const { productsQuery: {isLoading, error, data }} = useProducts();
     const products = data && data.filter((product) => product.category === category)
+
     return (
         <section className='max-w-screen-2xl m-auto pb-28 font-basic'>
             <h1 className='text-left my-12'>products {`> ${category}`}</h1>

@@ -1,13 +1,14 @@
 import React from 'react';
 import { useState } from 'react';
 import { uploadImage } from '../../api/uploader';
-import { addNewProduct } from '../../api/firebase';
+import useProducts from '../../hooks/useProducts';
 import Button from '../../components/Button';
 
 export default function NewProduct() {
     const [ product, setProduct ] = useState({});
     const [ sizeOption, setSizeOption ] = useState([]);
     const [ file, setFile ] = useState();
+    const { addProduct } = useProducts();
 
     const handleChange = (e) => {
         const { name, value, checked, files } = e.target;
@@ -32,7 +33,14 @@ export default function NewProduct() {
     const handleSubmit = (e) => {
         e.preventDefault();
         uploadImage(file).then((url) => {
-            addNewProduct(product, sizeOption, url)
+            addProduct.mutate(
+                {product, sizeOption, url},
+                {
+                    onSuccess: () => {
+                        alert('Added to your products');
+                    }
+                }
+            )
         })
     }
  

@@ -19,10 +19,8 @@ import main_1_2 from '../images/main_1_2.jpg'
 import main_1_3 from '../images/main_1_3.jpg'
 import ProductCard from '../components/ProductCard';
 
-
-
 export default function Home() {
-    const { data, isLoading, error } = useQuery(['products'], getProducts);
+    const { data } = useQuery(['products'], getProducts);
     return (
         <section className='relative'>
             <section className='relative flex m-auto items-end mb-10 pt-16'>
@@ -74,8 +72,8 @@ export default function Home() {
                     modules={[FreeMode, Pagination, Navigation]}
                     className="mySwiper swiper2 max-w-screen-2xl"
                     >
-                    { data && data.map((product) => (
-                        <SwiperSlide className='flex justify-center align-middle pb-24'>
+                    { data && data.map((product, index) => (
+                        <SwiperSlide key={index} className='flex justify-center align-middle pb-24'>
                             <ProductCard key={product.id} product={product}/>
                         </SwiperSlide>
                     )  
