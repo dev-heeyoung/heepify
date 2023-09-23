@@ -12,11 +12,11 @@ export default function ProductCard({
         onClick={() => {
             navigate(`/products/${id}`, { state: {product} })
         }} 
-        className='items-center cursor-pointer'>
-            <img src={imageURL} alt={title} />
-            <div className='mt-1'>
-                <p className='opacity-70 capitalize'>{category}</p>
-                <p>{title}</p>
+        className='flex flex-col items-center'>
+            <img src={imageURL} alt={title} className='cursor-pointer hover:grayscale object-cover h-96 w-full'/>
+            <div className='flex flex-col mt-1'>
+                <p className='opacity-70 uppercase text-sm border-y border-border mt-2 mb-1 w-fit text-center mx-auto px-3'>{category}</p>
+                <p className='uppercase my-1'>{title}</p>
                 <p>${price}</p>
             </div>
         </li>

@@ -55,6 +55,7 @@ export default function Navbar() {
                 <Link to='/' onMouseEnter={handleMouseLeave} className='mx-5 hover:text-point'>CONTACT</Link>
             </nav>
             <nav className={`text-center transition-all ease-in duration-500 hover:opacity-80 ${isHover? 'h-full py-2 my-1 opacity-100' : 'h-0 overflow-y-hidden opacity-0' }`}>
+                <Link to='/products/all' className="mx-3 hover:text-point">ALL</Link>
                 <Link to='/products/women' className="mx-3 hover:text-point">WOMEN</Link>
                 <Link to='/products/men' className="mx-3 hover:text-point">MEN</Link>
                 <Link to='/products/accessories' className="mx-3 hover:text-point">ACCESSORIES</Link>

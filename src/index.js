@@ -7,6 +7,7 @@ import ErrorPage from './pages/ErrorPage'
 import Home from './pages/Home'
 import Cart from './pages/Cart'
 import Login from './pages/Login'
+import All from './pages/products/All'
 import Women from './pages/products/Women'
 import Men from './pages/products/Men'
 import Accessories from './pages/products/Accessories'
@@ -30,6 +31,7 @@ const router = createBrowserRouter([
         )
       },
       { path: '/login', element: <Login /> },
+      { path: '/products/all', element: <All /> },
       { path: '/products/women', element: <Women /> },
       { path: '/products/men', element: <Men /> },
       { path: '/products/accessories', element: <Accessories /> },
