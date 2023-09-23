@@ -34,10 +34,19 @@ module.exports = {
           to: {
             transform: 'translateX(-50%)'
           }
+        },
+        opacity: {
+          from: {
+            opacity: '0'
+          },
+          to: {
+            opacity: '100%'
+          }
         }
       },
       animation: {
-        slide: 'slide 30s linear infinite'
+        slide: 'slide 30s linear infinite',
+        opacity: 'opacity 1s linear'
       },
       height: {
         196: '48rem'

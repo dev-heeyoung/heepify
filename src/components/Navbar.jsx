@@ -14,8 +14,8 @@ export default function Navbar() {
     const handleMouseLeave = () => isHover && setHover(false);
 
     return (
-        <header onMouseLeave={handleMouseLeave} className='text-brand font-basic px-10'> 
-            <div className='flex relative'>
+        <header className='text-brand font-basic px-10'> 
+            <div onMouseEnter={handleMouseLeave} className='flex relative'>
                 <Link to='/' className="m-auto text-center py-3">
                     <h1 className="text-5xl p-2 font-brand font-semibold opacity-80">Heepify</h1>
                 </Link>   
@@ -44,22 +44,24 @@ export default function Navbar() {
                     }
                 </nav>                    
             </div>
-            <nav className='text-center flex justify-center'>
-                <Link to='/' onMouseEnter={handleMouseLeave} className='mx-5 hover:text-point'>HOME</Link>
-                <div onMouseEnter={handleMouseEnter} className={`flex item-center mx-5 cursor-pointer ${isHover && 'text-point' }`}>
-                    <span>SHOP</span>
-                    <span className="pt-1 pl-1"><MdOutlineKeyboardArrowDown /></span>
-                </div>
-                <Link to='/' onMouseEnter={handleMouseLeave} className='mx-5 hover:text-point'>FAQ</Link>
-                <Link to='/' onMouseEnter={handleMouseLeave} className='mx-5 hover:text-point'>BLOG</Link>
-                <Link to='/' onMouseEnter={handleMouseLeave} className='mx-5 hover:text-point'>CONTACT</Link>
-            </nav>
-            <nav className={`text-center transition-all ease-in duration-500 hover:opacity-80 ${isHover? 'h-full py-2 my-1 opacity-100' : 'h-0 overflow-y-hidden opacity-0' }`}>
-                <Link to='/products/all' className="mx-3 hover:text-point">ALL</Link>
-                <Link to='/products/women' className="mx-3 hover:text-point">WOMEN</Link>
-                <Link to='/products/men' className="mx-3 hover:text-point">MEN</Link>
-                <Link to='/products/accessories' className="mx-3 hover:text-point">ACCESSORIES</Link>
-            </nav>
+            <div className='relative'>
+                <nav className='text-center flex justify-center'>
+                    <Link to='/' onMouseEnter={handleMouseLeave} className='mx-5 hover:text-point'>HOME</Link>
+                    <div onMouseEnter={handleMouseEnter} className={`flex item-center mx-5 cursor-pointer ${isHover && 'text-point' }`}>
+                        <span>SHOP</span>
+                        <span className="pt-1 pl-1"><MdOutlineKeyboardArrowDown /></span>
+                    </div>
+                    <Link to='/' onMouseEnter={handleMouseLeave} className='mx-5 hover:text-point'>FAQ</Link>
+                    <Link to='/' onMouseEnter={handleMouseLeave} className='mx-5 hover:text-point'>BLOG</Link>
+                    <Link to='/' onMouseEnter={handleMouseLeave} className='mx-5 hover:text-point'>CONTACT</Link>
+                </nav>
+                <nav onMouseLeave={handleMouseLeave} className={`flex text-center animate-opacity hover:opacity-80 left-1/2 -translate-x-1/2 z-50 ${isHover? 'mt-1 absolute' : 'hidden' }`}>
+                    <Link to='/products/all' className="mx-3 hover:text-point">ALL</Link>
+                    <Link to='/products/women' className="mx-3 hover:text-point">WOMEN</Link>
+                    <Link to='/products/men' className="mx-3 hover:text-point">MEN</Link>
+                    <Link to='/products/accessories' className="mx-3 hover:text-point">ACCESSORIES</Link>
+                </nav>
+            </div>
         </header>
     );
 }

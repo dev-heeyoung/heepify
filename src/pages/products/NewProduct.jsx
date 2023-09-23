@@ -113,7 +113,7 @@ export default function NewProduct() {
                         className="mt-2 text-sm text-neutral-500 file:cursor-pointer file:mr-4 file:py-2 file:px-4 file:border-0 file:font-semibold file:text-white file:bg-brand hover:file:opacity-80"/>
                 </div>
                 </div>
-                <Button text='ADD PRODUCT' className='self-center mt-10'/>
+                <Button text='ADD PRODUCT' className='self-center mt-10 w-full'/>
             </form>
         </section>
     );

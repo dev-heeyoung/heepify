@@ -1,5 +1,4 @@
 import React from 'react';
-import { useQuery } from '@tanstack/react-query'
 import { Link } from 'react-router-dom';
 import { TbJewishStarFilled } from 'react-icons/tb';
 import { FaShippingFast, FaMoneyBillWave } from 'react-icons/fa'
@@ -7,7 +6,6 @@ import { AiFillCustomerService, AiOutlineArrowRight } from 'react-icons/ai'
 import { HiOutlineChevronDoubleDown } from 'react-icons/hi'
 import { BsSend } from 'react-icons/bs'
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { getProducts } from '../api/firebase';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/free-mode';
@@ -18,17 +16,21 @@ import main_1_1 from '../images/main_1_1.jpg'
 import main_1_2 from '../images/main_1_2.jpg'
 import main_1_3 from '../images/main_1_3.jpg'
 import ProductCard from '../components/ProductCard';
+import useProducts from '../hooks/useProducts';
 
 export default function Home() {
-    const { data } = useQuery(['products'], getProducts);
+    const NUM_OF_ITEM_TO_SHOW = 10;
+    const { productsQuery: { data } } = useProducts();
+    const itemsToShow = data && data.slice(0, NUM_OF_ITEM_TO_SHOW);
+
     return (
         <section className='relative'>
-            <section className='relative flex m-auto items-end mb-10 pt-16'>
+            <section className='animate-opacity relative flex m-auto items-end mb-10 pt-16'>
                 <h1 className='absolute top-16 z-10 text-center left-1/2 -translate-x-1/2 font-brand font-semibold text-9xl text-transparent bg-gradient-to-r from-brand to-point bg-clip-text whitespace-nowrap'>Top Fashion Brand</h1>
                 <div className='w-1/3 flex justify-end pr-10 pb-16'>
                     <p className='w-2/3 text-right '>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum quod aliquid ab eos doloremque distinctio laboriosam quaerat, consectetur fugit quis ut aspernatur impedit. Unde tempore similique placeat quae fugiat quisquam?</p>
                 </div>
-                <div className='w-1/3 z-0 max-h-[48rem]'>
+                <div className='w-1/3 z-0 max-h-[52rem]'>
                     <Swiper
                         spaceBetween={30}
                         centeredSlides={true}
@@ -48,7 +50,10 @@ export default function Home() {
                     </Swiper>
                 </div>
                 <div className='w-1/3'>
-                    <button className='align-bottom whitespace-nowrap cursor-pointer border rounded-l-full rounded-r-full border-brand outline outline-offset-2 outline-point outline-4 px-4 py-1 ml-10 text-3xl font-brand font-bold text-brand'>SHOP NOW</button>
+                    <div className='animate-opacity flex'>
+                        <Button text='show now' className='align-bottom ml-10 w-36 font-basic' />
+                        <div className='flex ml-0.5 w-0.5 bg-point'></div>
+                    </div>
                     <div className='flex text-brand items-end justify-end mr-10 mb-16'>
                         <div className='animate-bounce flex flex-col items-center'>
                             <p className="text-sm [writing-mode:vertical-lr] whitespace-nowrap rotate-180 mb-2">SCROLL DOWN</p>
@@ -59,8 +64,8 @@ export default function Home() {
             </section>
             
             <section className='text-center mt-48'> 
-                <h1 className='text-5xl font-brand font-semibold mb-3'>Our Products</h1>
-                <p className='opacity-80 mb-10'>Meet out best seller</p>
+                <h1 className='text-4xl font-brand font-semibold mb-3'>Our Products</h1>
+                <p className='opacity-80 mb-10'>Meet our bestsellers</p>
                 <Swiper
                     slidesPerView={4}
                     spaceBetween={30}
@@ -72,13 +77,14 @@ export default function Home() {
                     modules={[FreeMode, Pagination, Navigation]}
                     className="mySwiper swiper2 max-w-screen-2xl"
                     >
-                    { data && data.map((product, index) => (
+                    { itemsToShow && itemsToShow.map((product, index) => (
                         <SwiperSlide key={index} className='flex justify-center align-middle pb-24'>
                             <ProductCard key={product.id} product={product}/>
                         </SwiperSlide>
                     )  
                     )}
                 </Swiper>
+                <Button text='more products' className='mt-5'/>
             </section>
 
             <section className='flex bg-brand text-white font-semibold py-4 my-20 font-brand overflow-hidden flex-nowrap'>

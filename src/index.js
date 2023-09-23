@@ -6,7 +6,6 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import ErrorPage from './pages/ErrorPage'
 import Home from './pages/Home'
 import Cart from './pages/Cart'
-import Login from './pages/Login'
 import All from './pages/products/All'
 import Women from './pages/products/Women'
 import Men from './pages/products/Men'
@@ -30,7 +29,6 @@ const router = createBrowserRouter([
           </ProtectedRoute>
         )
       },
-      { path: '/login', element: <Login /> },
       { path: '/products/all', element: <All /> },
       { path: '/products/women', element: <Women /> },
       { path: '/products/men', element: <Men /> },

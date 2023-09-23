@@ -28,22 +28,22 @@ const Timer = () => {
     <ul className='flex text-right justify-items-end'>
         <li className='w-12'>
             <p className='text-3xl'>{days}</p>
-            <p className='italic'>days</p>
+            <p className='italic opacity-60'>days</p>
         </li>
-        <li className='ml-3'><p className='text-xl'>:</p></li>
+        <li className='ml-3'><p className='text-xl opacity-60'>:</p></li>
         <li className='w-12'>
             <p className='text-3xl'>{hours}</p>
-            <p className='italic'>hours</p>
+            <p className='italic opacity-60'>hours</p>
         </li>
-        <li className='ml-3'><p className='text-xl'>:</p></li>
+        <li className='ml-3'><p className='text-xl opacity-60'>:</p></li>
         <li className='w-12'>
             <p className='text-3xl'>{minutes}</p>
-            <p className='italic'>mins</p>
+            <p className='italic opacity-60'>mins</p>
         </li>
-        <li className='ml-3'><p className='text-xl'>:</p></li>
+        <li className='ml-3'><p className='text-xl opacity-60'>:</p></li>
         <li className='w-12'>
             <p className='text-3xl'>{seconds}</p>
-            <p className='italic'>sec</p>
+            <p className='italic opacity-60'>sec</p>
         </li>
     </ul>
   );

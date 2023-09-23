@@ -17,7 +17,7 @@ export default function ProductCard({
             <div className='flex flex-col mt-1'>
                 <p className='opacity-70 uppercase text-sm border-y border-border mt-2 mb-1 w-fit text-center mx-auto px-3'>{category}</p>
                 <p className='uppercase my-1'>{title}</p>
-                <p>${price}</p>
+                <p>CAD ${price}</p>
             </div>
         </li>
     );

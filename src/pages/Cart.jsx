@@ -1,16 +1,21 @@
 import React from 'react';
+import { useAuthContext } from '../context/AuthContext';
 import CartItem from '../components/CartItem';
 import PriceCard from '../components/PriceCard';
 import useCart from '../hooks/useCart';
 
+
 export default function Cart() {
     const { cartQuery: {isLoading, data: cartItems} } = useCart();
-    if(isLoading) return <p>Loading...</p>
+    const { user } = useAuthContext();
+
+    if(!user) return <div className='text-center my-10'>Need login for this page</div>
+    if(isLoading) return <p className='text-center my-10'>Loading...</p>
 
     const hasProducts = cartItems && cartItems.length > 0;
 
     return (
-        <section className='font-basic my-20 mx-24'>
+        <section className='font-basic my-20 mx-24 mb-40'>
             <h1 className='text-left text-2xl mb-7'>Shopping Cart</h1>
             <section className='flex justify-between'>
                 <div className='w-3/5'>
@@ -21,11 +26,11 @@ export default function Cart() {
                         <li className=''>Quantity</li>
                         <li className='text-right'>Sub total</li>
                     </ul>
-                    {!hasProducts && <p>No product in your cart.</p>}
+                    {!hasProducts && <p>No product(s) in your cart.</p>}
                     {hasProducts && (
                         <ul>
                             {cartItems.map((product) => 
-                                <CartItem key={product.id} item={product}/>
+                                <CartItem key={product.id} product={product}/>
                             )}
                         </ul>
                     )}

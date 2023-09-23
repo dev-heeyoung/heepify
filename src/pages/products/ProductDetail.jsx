@@ -23,12 +23,12 @@ export default function ProductDetail({ state }) {
     }
 
     return (
-        <section className='max-w-screen-xl mx-auto flex border font-basic relative mt-24'>
-                <img src={imageURL} alt={title}/>
-                <div className='ml-10'>
-                    <p className='opacity-80 capitalize mt-10'>{category}</p>
-                    <h3 className='text-3xl font-semibold mt-4'>{title}</h3>
-                    <h2 className='text-2xl font-semibold mt-3'>${price}</h2>
+        <section className='max-w-screen-xl mx-auto flex justify-center font-basic relative mt-24 mb-40'>
+                <img src={imageURL} alt={title} className='object-cover h-full w-1/3 shadow-md'/>
+                <div className='ml-20'>
+                    <p className='flex opacity-80 capitalize mt-10'>{category}</p>
+                    <h3 className='text-2xl mt-4'>{title}</h3>
+                    <h2 className='mt-3'>CAD ${price}</h2>
                     <p className='mt-10'>{description}</p>
                     <div>
                         <h3 className='font-semibold mt-10 mb-3'>SIZE</h3>
@@ -44,7 +44,7 @@ export default function ProductDetail({ state }) {
                             })}
                         </div>
                     </div>
-                    <Button text='ADD TO CART' className='mt-10' onClick={handleClick}/>
+                    <Button text='ADD TO CART' className='mt-10 w-full' onClick={handleClick}/>
                     <div className='mt-10'>
                         <h3 className='font-semibold'>SHARE</h3>
                         <ul className='flex mt-3 ml-1 opacity-70'>
