@@ -30,7 +30,7 @@ export default function Products({ category }) {
             <p className='text-right'> { products ? products.length : 0 } items</p>
             { isLoading && <div className='my-10 text-left'>Loading...</div>}
             { error && <div className='my-10 text-left'>{error}</div>}
-            { !(products.length) && <div className='my-10 text-left'>No Product(s) in this category.</div>}
+            { !(products?.length) && <div className='my-10 text-left'>No Product(s) in this category.</div>}
             <ul className="grid grid-cols-4 gap-x-5 gap-y-10 mt-5">
             { products && products.map((product) => 
                 <ProductCard key={product.id} product={product}/>       

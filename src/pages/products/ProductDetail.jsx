@@ -23,8 +23,8 @@ export default function ProductDetail({ state }) {
     }
 
     return (
-        <section className='max-w-screen-xl mx-auto flex justify-center font-basic relative mt-24 mb-40'>
-                <img src={imageURL} alt={title} className='object-cover h-full w-1/3 shadow-md'/>
+        <section className='max-w-screen-lg mx-auto flex justify-center font-basic relative mt-24 mb-40'>
+                <img src={imageURL} alt={title} className='h-full w-96 shadow-md'/>
                 <div className='ml-20'>
                     <p className='flex opacity-80 capitalize mt-10'>{category}</p>
                     <h3 className='text-2xl mt-4'>{title}</h3>
@@ -34,7 +34,7 @@ export default function ProductDetail({ state }) {
                         <h3 className='font-semibold mt-10 mb-3'>SIZE</h3>
                         <div className='flex'>
                         {sizeOption &&
-                            sizeOption.map((option, index) => {
+                            sizeOption?.map((option, index) => {
                                 return (
                                 <label key={index}>
                                     <input type='radio' name='size' onChange={handleSelect} value={option} defaultChecked={option === sizeOption[0]} className='sr-only peer'/>

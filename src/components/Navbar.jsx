@@ -16,8 +16,8 @@ export default function Navbar() {
     return (
         <header className='text-brand font-basic px-10'> 
             <div onMouseEnter={handleMouseLeave} className='flex relative'>
-                <Link to='/' className="m-auto text-center py-3">
-                    <h1 className="text-5xl p-2 font-brand font-semibold opacity-80">Heepify</h1>
+                <Link to='/' className="m-auto text-center py-2">
+                    <h1 className="text-3xl p-2 font-brand font-semibold opacity-80">Heepify</h1>
                 </Link>   
                 <nav className="flex md:absolute text-3xl right-0 top-1/4 m-3 items-center opacity-80">
                     <Link to='/' className="hover:text-point"><AiOutlineInstagram /></Link>

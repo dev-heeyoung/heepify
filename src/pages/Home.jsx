@@ -25,7 +25,7 @@ export default function Home() {
 
     return (
         <section className='relative'>
-            <section className='animate-opacity relative flex m-auto items-end mb-10 pt-16'>
+            <section className='animate-opacity relative flex m-auto items-end mb-10 pt-20'>
                 <h1 className='absolute top-16 z-10 text-center left-1/2 -translate-x-1/2 font-brand font-semibold text-9xl text-transparent bg-gradient-to-r from-brand to-point bg-clip-text whitespace-nowrap'>Top Fashion Brand</h1>
                 <div className='w-1/3 flex justify-end pr-10 pb-16'>
                     <p className='w-2/3 text-right '>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum quod aliquid ab eos doloremque distinctio laboriosam quaerat, consectetur fugit quis ut aspernatur impedit. Unde tempore similique placeat quae fugiat quisquam?</p>
@@ -42,7 +42,7 @@ export default function Home() {
                             clickable: true,
                         }}
                         modules={[Autoplay, Pagination]}
-                        className='mySwiper swiper1 rounded-tl-full rounded-tr-full'
+                        className='mySwiper swiper1 rounded-tl-full rounded-tr-full border-2 border-transparent ring-2 ring-point'
                     >
                         <SwiperSlide className='flex justify-center align-middle max-h-[48rem]'><img src={main_1_1} alt='' className='object-cover'/></SwiperSlide>
                         <SwiperSlide className='flex justify-center align-middle max-h-[48rem]'><img src={main_1_2} alt='' className='object-cover'/></SwiperSlide> 
