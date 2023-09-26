@@ -15,16 +15,16 @@ export default function Cart() {
     const hasProducts = cartItems && cartItems.length > 0;
 
     return (
-        <section className='font-basic my-20 mx-24 mb-40'>
+        <section className='font-basic my-20 mx-12 mb-40 xl:mx-24'>
             <h1 className='text-left text-2xl mb-7'>Shopping Cart</h1>
-            <section className='flex justify-between'>
-                <div className='w-3/5'>
-                    <ul className='grid grid-cols-8 gap-5 uppercase border-y border-border text-center font-semibold text-sm py-3 my-5'>
-                        <li className='col-span-3 text-left'>Products</li>
-                        <li className=''>Option</li>
-                        <li className=''>Price</li>
-                        <li className=''>Quantity</li>
-                        <li className='text-right'>Sub total</li>
+            <section className='flex flex-col xl:flex-row xl:justify-between'>
+                <div className='xl:w-3/5'>
+                    <ul className='grid grid-cols-8 gap-5 uppercase border-y border-border text-center font-semibold text-sm py-3 mb-5'>
+                        <li className='col-span-3 text-left'>Product(s)</li>
+                        <li className='hidden md:block'>Option</li>
+                        <li className='hidden md:block'>Price</li>
+                        <li className='hidden md:block'>Quantity</li>
+                        <li className='hidden md:block text-right'>Sub total</li>
                     </ul>
                     {!hasProducts && <p>No product(s) in your cart.</p>}
                     {hasProducts && (
@@ -36,7 +36,7 @@ export default function Cart() {
                     )}
                 </div>
                 {hasProducts && 
-                    <PriceCard className='w-2/5'/>
+                    <PriceCard className='ml-16 xl:w-2/5'/>
                 }
             </section>
         </section>
