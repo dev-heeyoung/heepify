@@ -9,6 +9,7 @@ module.exports = {
         point: '#c9ab78ff',
         basic: '#eceae7ff',
         beige: '#e8e5e2ff',
+        bg: '#fcf9eeff',
         border: '#ccc'
       },
       fontFamily: {
@@ -46,7 +47,7 @@ module.exports = {
       },
       animation: {
         slide: 'slide 30s linear infinite',
-        opacity: 'opacity 1s linear'
+        opacity: 'opacity 0.5s linear'
       },
       height: {
         196: '48rem'
