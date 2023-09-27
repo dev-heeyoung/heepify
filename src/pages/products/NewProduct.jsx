@@ -87,15 +87,15 @@ export default function NewProduct() {
  
 
     return (
-        <section className="font-basic m-auto max-w-screen-lg mt-12 mb-28 py-14 px-20">
+        <section className="font-basic m-auto max-w-screen-lg mt-10 mb-28 p-10 md:py-10 md:px-20">
             <h1 className='font-brand font-semibold text-4xl text-center mb-2'>Add New Product</h1>
             <p className='text-center pb-8 mb-10 border-b border-b-neutral-200'>Add new product to your website</p>
             <form onSubmit={handleSubmit} className='flex flex-col'>
-                <div className='flex'>
-                <div className='w-1/2 relative flex flex-col'>
-                    <div className='border w-full h-full relative'>{file && <img src={file ? URL.createObjectURL(file) : ''} alt='selected file' className="absolute object-cover w-full h-full" />}</div>
+                <div className='flex flex-col md:flex-row'>
+                <div className='w-full md:w-1/2 relative flex flex-col'>
+                    <div className='border w-full h-96 md:h-full relative mb-5 md:mb-0'>{file && <img src={file ? URL.createObjectURL(file) : ''} alt='selected file' className="absolute object-cover w-full h-full" />}</div>
                 </div>
-                <div className='flex flex-col w-1/2 ml-5 justify-between'>
+                <div className='flex flex-col w-full md:w-1/2 md:ml-5 justify-between'>
                     <div className='flex flex-col mb-3'> 
                         <label>TITLE</label>
                         <input type="text" name='title' value={product.title} required onChange={handleChange} className='border h-1/2 mt-1'/>
