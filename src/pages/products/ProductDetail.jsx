@@ -4,6 +4,7 @@ import { BsFacebook, BsTwitter, BsPinterest } from 'react-icons/bs';
 import { FaSquareInstagram } from 'react-icons/fa6';
 import Button from '../../components/Button';
 import useCart from '../../hooks/useCart';
+import CategoryNavbar from '../../components/CategoryNavbar';
 
 export default function ProductDetail({ state }) {
     const {
@@ -23,9 +24,12 @@ export default function ProductDetail({ state }) {
     }
 
     return (
-        <section className='max-w-screen-lg mx-auto flex justify-center font-basic relative mt-24 mb-40'>
-                <img src={imageURL} alt={title} className='h-full w-96 shadow-md'/>
-                <div className='ml-20'>
+        <section className='lg:max-w-screen-lg mx-auto px-10 mt-12 lg:mt-24'>
+            <CategoryNavbar category={category} classNam=''/>
+            <section className=' flex flex-col lg:flex-row  font-basic relative mt-12 mb-40 '>
+                
+                <img src={imageURL} alt={title} className='h-96 md:h-160 lg:h-full lg:w-96 shadow-lg object-cover'/>
+                <div className='flex flex-col flex-wrap ml-0 lg:ml-10'>
                     <p className='flex opacity-80 capitalize mt-10'>{category}</p>
                     <h3 className='text-2xl mt-4'>{title}</h3>
                     <h2 className='mt-3'>CAD ${price}</h2>
@@ -55,7 +59,7 @@ export default function ProductDetail({ state }) {
                         </ul>
                     </div>
                 </div>
-                
+            </section>
         </section>
     );
 }
