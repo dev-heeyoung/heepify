@@ -25,25 +25,25 @@ const Timer = () => {
   }, []);
 
   return (
-    <ul className='flex text-right justify-items-end'>
-        <li className='w-12'>
-            <p className='text-3xl'>{days}</p>
-            <p className='italic opacity-60'>days</p>
+    <ul className='flex text-right'>
+        <li className='w-fit'>
+            <p className='text-lg md:text-2xl font-basic'>{days}</p>
+            <p className='italic opacity-60 text-sm md:text-base'>days</p>
         </li>
         <li className='ml-3'><p className='text-xl opacity-60'>:</p></li>
-        <li className='w-12'>
-            <p className='text-3xl'>{hours}</p>
-            <p className='italic opacity-60'>hours</p>
+        <li className='w-fit'>
+            <p className='text-lg md:text-2xl font-basic'>{hours}</p>
+            <p className='italic opacity-60 text-sm md:text-base'>hours</p>
         </li>
         <li className='ml-3'><p className='text-xl opacity-60'>:</p></li>
-        <li className='w-12'>
-            <p className='text-3xl'>{minutes}</p>
-            <p className='italic opacity-60'>mins</p>
+        <li className='w-fit'>
+            <p className='text-lg md:text-2xl font-basic'>{minutes}</p>
+            <p className='italic opacity-60 text-sm md:text-base'>mins</p>
         </li>
         <li className='ml-3'><p className='text-xl opacity-60'>:</p></li>
-        <li className='w-12'>
-            <p className='text-3xl'>{seconds}</p>
-            <p className='italic opacity-60'>sec</p>
+        <li className='w-fit'>
+            <p className='text-lg md:text-2xl font-basic'>{seconds}</p>
+            <p className='italic opacity-60 text-sm md:text-base'>secs</p>
         </li>
     </ul>
   );

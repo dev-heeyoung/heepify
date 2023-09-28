@@ -50,7 +50,9 @@ module.exports = {
         opacity: 'opacity 0.5s linear'
       },
       height: {
-        196: '48rem'
+        196: '48rem',
+        160: '40rem',
+        128: '32rem'
       }
     }
   },
