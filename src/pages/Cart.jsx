@@ -15,7 +15,7 @@ export default function Cart() {
     const hasProducts = cartItems && cartItems.length > 0;
 
     return (
-        <section className='font-basic my-20 mx-12 mb-40 xl:mx-24'>
+        <section className='my-20 mx-12 mb-40 xl:mx-24'>
             <h1 className='text-left text-2xl mb-7'>Shopping Cart</h1>
             <section className='flex flex-col xl:flex-row xl:justify-between'>
                 <div className='xl:w-3/5'>

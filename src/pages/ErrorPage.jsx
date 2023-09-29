@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 export default function ErrorPage() {
     return (
-            <section className='flex flex-col text-center justify-center items-center font-basic text-brand mb-20 lg:h-screen lg:mb-0'>
+            <section className='flex flex-col text-center justify-center items-center mb-20 lg:h-screen lg:mb-0'>
                 <Link to='/' className='text-5xl mb-10 font-brand text-point font-semibold mt-10 lg:mt-0 lg:mb-20'>Heefify</Link>
                 <div className='opacity-80 mb-10 lg:mb-20'>
                     <h1 className='font-brand font-semibold mb-2 text-xl lg:mb-5 lg:text-3xl'>Sorry, we couldn't find that page for you.</h1>

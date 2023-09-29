@@ -26,7 +26,7 @@ export default function ProductDetail({ state }) {
     return (
         <section className='lg:max-w-screen-lg mx-auto px-10 mt-12 lg:mt-24'>
             <CategoryNavbar category={category} classNam=''/>
-            <section className=' flex flex-col lg:flex-row  font-basic relative mt-12 mb-40 '>
+            <section className=' flex flex-col lg:flex-row relative mt-12 mb-40 '>
                 
                 <img src={imageURL} alt={title} className='h-96 md:h-160 lg:h-full lg:w-96 shadow-lg object-cover'/>
                 <div className='flex flex-col flex-wrap ml-0 lg:ml-10'>

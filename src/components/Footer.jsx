@@ -23,7 +23,7 @@ export default function Footer() {
         }
     }
     return (
-        <section className='font-basic py-10 px-10 mx-auto border-t text-sm'>
+        <section className='py-10 px-10 mx-auto border-t text-sm'>
             <div className="flex flex-col md:flex-row md:justify-between mb-7">
                 <div className='md:w-1/4 mb-5 md:mr-3'>
                     <h1 className='mb-5 text-base'>HEEPIFY</h1>
@@ -47,7 +47,7 @@ export default function Footer() {
                 </div>
                 <div className='md:mr-3'>
                     <h3 className='flex mb-3 text-base items-center'>FOLLOW US<IoIosArrowDown onClick={handleToggle} className='md:hidden ml-2 cursor-pointer'/></h3>
-                    <ul className={`${togglesStatus[2] || 'hidden'} md:flex flex flex-wrap opacity-70 mb-5`}>
+                    <ul className={`${togglesStatus[2] || 'hidden'} md: flex flex-wrap opacity-70 mb-5`}>
                             <li className="hover:text-point cursor-pointer text-xl mr-3 mb-2"><FaSquareInstagram /></li>
                             <li className="hover:text-point cursor-pointer text-xl mr-3 mb-2"><BsFacebook /></li>
                             <li className="hover:text-point cursor-pointer text-xl mr-3 mb-2"><BsTwitter /></li>

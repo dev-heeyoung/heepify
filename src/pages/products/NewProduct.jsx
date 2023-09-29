@@ -87,7 +87,7 @@ export default function NewProduct() {
  
 
     return (
-        <section className="font-basic m-auto max-w-screen-lg mt-10 mb-28 p-10 md:py-10 md:px-20">
+        <section className="m-auto max-w-screen-lg mt-10 mb-28 p-10 md:py-10 md:px-20">
             <h1 className='font-brand font-semibold text-4xl text-center mb-2'>Add New Product</h1>
             <p className='text-center pb-8 mb-10 border-b border-b-neutral-200'>Add new product to your website</p>
             <form onSubmit={handleSubmit} className='flex flex-col'>
@@ -116,7 +116,7 @@ export default function NewProduct() {
                         <div className='flex flex-wrap justify-between'>
                             {checkList.map((option, index) => (
                             <div key={index} className='flex'>
-                                <input type="checkbox" id={option.item} name='size' value={option.item} checked={option.checked} onChange={handleChange} className='peer scale-110 flex self-center cursor-pointer text-brand bg-gray-100 border-gray-300 rounded focus:ring-point focus:ring-2'/>
+                                <input type="checkbox" id={option.item} name='size' value={option.item} checked={option.checked} onChange={handleChange} className='peer scale-110 flex self-center cursor-pointer bg-gray-100 border-gray-300 rounded focus:ring-point focus:ring-2'/>
                                 <label htmlFor={option.item} className='h-8 flex items-center pl-3 mr-2 opacity-70 peer-checked:opacity-100 cursor-pointer uppercase'>{option.item}</label>
                             </div>
                             )

@@ -20,37 +20,7 @@ export default function Navbar() {
     const handleMouseLeave = () => isHover && setHover(false);
 
     return (
-        <header className='relative text-brand font-basic px-5'> 
-            {/* <div onMouseEnter={handleMouseLeave} className='grid grid-cols-3 items-center'>
-                <div><AiOutlineMenu onClick={setIsClicked} className='block text-xl cursor-pointer lg:hidden' /></div>
-                <Link to='/' className="m-auto text-center py-2">
-                    <h1 className="text-3xl p-2 font-brand font-semibold opacity-80 items-center">Heepify</h1>
-                </Link>   
-                <nav className="flex justify-end text-3xl items-center opacity-80">
-                    <Link to='/' className="hover:text-point hidden lg:block"><AiOutlineInstagram /></Link>
-                    <Link to='/' className="ml-4 hover:text-point hidden lg:block"><AiOutlineFacebook /></Link>
-                    { user && user.isAdmin && (
-                        <Link to='/products/newProduct' className="ml-4 hover:text-point">
-                            <AiOutlineEdit />
-                        </Link>
-                    )}
-                    { user && !(user.isAdmin) && 
-                        <CartStatus />
-                    }
-                    { user && (
-                        <>
-                            <div className='flex items-center'>
-                                <div className="hover:text-point w-7 h-7 ml-4"><img src={user.photoURL} alt='profile' className='rounded-full'></img></div>
-                                <div className="text-base ml-3 hidden xl:block">{user?.displayName}</div>
-                            </div>
-                            <div onClick={logout} className='hover:text-point text-base text-center ml-4 cursor-pointer'>LOGOUT</div>
-                        </>
-                    )}    
-                    { !user && 
-                    <div onClick={login} className='hover:text-point text-base text-center ml-4 cursor-pointer'>LOGIN</div>
-                    }
-                </nav>                    
-            </div> */}
+        <header className='relative px-5'> 
             <div className='grid grid-cols-3 items-center'>
                 <div><AiOutlineMenu onClick={handleMenuClick} className='block text-xl cursor-pointer lg:hidden' /></div>
                 <Link to='/' className="m-auto text-center py-2">
@@ -88,19 +58,19 @@ export default function Navbar() {
             <div className={`animate-opacity lg:animate-none absolute top-0 left-0 w-96 h-screen  bg-brand text-basic block ${isClicked ? 'block' : 'hidden lg:block'} lg:h-fit lg:relative lg:w-full lg:bg-transparent lg:text-brand z-50`}>
                 <nav className='flex flex-col lg:text-center lg:flex-row lg:justify-center m-3 lg:m-0'>
                     <CiSquareRemove onClick={handleMenuClick} className='text-3xl mr-1 self-end cursor-pointer lg:hidden' />
-                    <Link to='/' onClick={handleMenuClick} className='m-5 lg:mx-5 lg:my-0 hover:text-point w-fit'>HOME</Link>
+                    <Link to='/' onClick={isClicked && handleMenuClick} className='m-5 lg:mx-5 lg:my-0 hover:text-point w-fit'>HOME</Link>
                     <div onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} className='flex flex-col lg:flex-row relative justify-start lg:justify-center lg:items-center p-5 lg:px-5 lg:py-0 cursor-pointer'>
                         <span className={`flex ${isHover && 'text-point'}`}>SHOP<MdOutlineKeyboardArrowDown className='text-xl ml-1' /></span>
                         <nav className={`flex text-center animate-opacity left-0 z-50 -bottom-2 ${isHover? 'block pt-5 lg:absolute lg:-bottom-9' : 'hidden' }`}>
-                            <Link to='/products/all' onClick={handleMenuClick} className="mr-1 hover:text-point border border-border px-1 rounded-md">ALL</Link>
-                            <Link to='/products/women' onClick={handleMenuClick} className="mx-1 hover:text-point border border-border px-1 rounded-md">WOMEN</Link>
-                            <Link to='/products/men' onClick={handleMenuClick} className="mx-1 hover:text-point border border-border px-1 rounded-md">MEN</Link>
-                            <Link to='/products/accessories' onClick={handleMenuClick} className="mx-1 hover:text-point border border-border px-1 rounded-md">ACCESSORIES</Link>
+                            <Link to='/products/all' onClick={isClicked && handleMenuClick} className="mr-1 hover:bg-point hover:text-basic hover:border-transparent border border-border px-1 rounded-md">ALL</Link>
+                            <Link to='/products/women' onClick={isClicked && handleMenuClick} className="mx-1 hover:bg-point hover:text-basic hover:border-transparent border border-border px-1 rounded-md">WOMEN</Link>
+                            <Link to='/products/men' onClick={isClicked && handleMenuClick} className="mx-1 hover:bg-point hover:text-basic hover:border-transparent border border-border px-1 rounded-md">MEN</Link>
+                            <Link to='/products/accessories' onClick={isClicked && handleMenuClick} className="mx-1 hover:bg-point hover:text-basic hover:border-transparent border border-border px-1 rounded-md">ACCESSORIES</Link>
                         </nav>
                     </div>
-                    <Link to='/' onClick={handleMenuClick} className='p-5 lg:px-5 lg:py-0 hover:text-point w-fit'>FAQs</Link>
-                    <Link to='/' onClick={handleMenuClick} className='p-5 lg:px-5 lg:py-0 hover:text-point w-fit'>BLOG</Link>
-                    <Link to='/' onClick={handleMenuClick} className='p-5 lg:px-5 lg:py-0 hover:text-point w-fit'>CONTACT</Link>
+                    <Link to='/' onClick={isClicked && handleMenuClick} className='p-5 lg:px-5 lg:py-0 hover:text-point w-fit'>FAQs</Link>
+                    <Link to='/' onClick={isClicked && handleMenuClick} className='p-5 lg:px-5 lg:py-0 hover:text-point w-fit'>BLOG</Link>
+                    <Link to='/' onClick={isClicked && handleMenuClick} className='p-5 lg:px-5 lg:py-0 hover:text-point w-fit'>CONTACT</Link>
                 </nav>
                 
             </div>

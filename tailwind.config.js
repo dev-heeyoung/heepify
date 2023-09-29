@@ -53,6 +53,9 @@ module.exports = {
         196: '48rem',
         160: '40rem',
         128: '32rem'
+      },
+      transitionDuration: {
+        2000: '2000ms'
       }
     }
   },
